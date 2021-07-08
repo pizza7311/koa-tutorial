@@ -24,10 +24,15 @@ app.use(router.routes())
 ### 라우팅
 /user 주소로 들어오는 요청을 처리하는 라우터 작성하기  
 ```
+...
+
 const Router=require('koa-router')
 const user=new Router() //라우터로 생성할 객체는 임의로 user라고 지정했다
 
 user.get('/user',(ctx,next)=>{
   //user 정보를 응답하는 로직...
 })
+
+app.use(user.routes())
+app.listen(5000)
 ```
