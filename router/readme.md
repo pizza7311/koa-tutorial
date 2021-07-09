@@ -27,7 +27,7 @@ app.use(router.routes())
 ...
 
 const Router=require('koa-router')
-const user=new Router() //라우터로 생성할 객체는 임의로 user라고 지정했다
+const user=new Router() //router 객체 생성
 
 user.get('/user',(ctx,next)=>{
   //user 정보를 응답하는 로직...
@@ -35,4 +35,20 @@ user.get('/user',(ctx,next)=>{
 
 app.use(user.routes())
 app.listen(5000)
+```
+
+### url 파라미터
+1. ctx.params
+```
+router.get('/user/:id'),(ctx,next)=>{
+  // ctx.params 라는 객체가 추가된다
+  console.log(ctx.params) // {id:'user_id'}
+})
+```
+2. ctx.query
+```
+router.get('/user',(ctx,next)=>{  //user?id=12
+  //ctx.request.query로 접근하지만 ctx.query로도 접근이 가능하다
+  console.log(ctx.query)    //{id:12}
+})
 ```
