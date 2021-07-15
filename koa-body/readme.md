@@ -38,6 +38,7 @@ body type 설정
 
 file 업로드 옵션  
 * formidable({})  
+  
 koa body는 formidable 패키지로 파일업로드를 처리하는데  
 formidable에 전달할 옵션을 쓸수있다.  
 자세한 내용은 [node-formidable](https://github.com/node-formidable/formidable#options)에 있다.  
